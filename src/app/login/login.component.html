@@ -2,15 +2,15 @@
 
   <mat-card  class="example-card">
     <mat-card-content>
-      <form class="example-form">
+      <form [formGroup]="logInForm" class="example-form">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Username">
+          <input matInput formControlName="username" placeholder="Username">
         </mat-form-field>
       
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Password">
+          <input matInput formControlName="password" placeholder="Password">
         </mat-form-field>
-        <button mat-button color='accent'>LOGIN</button>
+        <button type="submit" [disabled]="!profileForm.valid" mat-button color='primary'>LOGIN</button>
       </form>
     </mat-card-content>
     <mat-card-actions>
